@@ -32,7 +32,6 @@ public class Movement : MonoBehaviour
     private void UpdateCurrentPath()
     {
         Vector2 mousePointInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Node previousNode = null;
         var currentPos = (Vector3Int)_position;
         var currentNode = _world.Grid.GetNodeFromCell((int)currentPos.x, (int)currentPos.y);
 
@@ -61,6 +60,5 @@ public class Movement : MonoBehaviour
                     }
                 }
             }
-            previousNode = selectedNode;
-        }
+    }
     }
