@@ -69,16 +69,12 @@ public class AStar
     private const int DIAGONAL_COST = 14;
     private const int STRAIGHT_COST = 10;
 
-    private readonly Vector2Int _gridBounds;
-    private readonly int _layersCount;
-
     private readonly NodeGrid _grid;
     private List<Node> _searchedNodes;
     private List<Node> _unsearchedNodes;
 
     public AStar(NodeGrid grid)
     {
-        _gridBounds = new Vector2Int(grid.Dimensions.x / 2, grid.Dimensions.y / 2);
         _grid = grid;
     }
 
