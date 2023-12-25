@@ -120,10 +120,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 242
-        width: 16
-        height: 22
+        x: 4
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 242
-        width: 16
-        height: 22
+        x: 20
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 242
-        width: 16
-        height: 22
+        x: 36
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 242
-        width: 16
-        height: 22
+        x: 52
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 242
-        width: 16
-        height: 22
+        x: 68
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_5
       rect:
         serializedVersion: 2
-        x: 80
-        y: 242
-        width: 16
-        height: 22
+        x: 83
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_6
       rect:
         serializedVersion: 2
-        x: 96
-        y: 242
-        width: 16
-        height: 22
+        x: 99
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_7
       rect:
         serializedVersion: 2
-        x: 112
-        y: 242
-        width: 16
-        height: 22
+        x: 115
+        y: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +288,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 220
-        width: 16
-        height: 22
+        x: 1
+        y: 226
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +309,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 220
-        width: 16
-        height: 22
+        x: 17
+        y: 226
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 220
-        width: 16
-        height: 22
+        x: 34
+        y: 226
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 220
-        width: 16
-        height: 22
+        x: 50
+        y: 226
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,10 +372,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_12
       rect:
         serializedVersion: 2
-        x: 64
-        y: 220
-        width: 16
-        height: 22
+        x: 65
+        y: 226
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,10 +393,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_13
       rect:
         serializedVersion: 2
-        x: 80
-        y: 220
-        width: 16
-        height: 22
+        x: 81
+        y: 226
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,10 +414,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_14
       rect:
         serializedVersion: 2
-        x: 96
-        y: 220
-        width: 16
-        height: 22
+        x: 98
+        y: 226
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,10 +435,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_15
       rect:
         serializedVersion: 2
-        x: 112
-        y: 220
-        width: 16
-        height: 22
+        x: 114
+        y: 226
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,10 +456,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 198
-        width: 16
-        height: 22
+        x: 1
+        y: 202
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,10 +477,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 198
-        width: 16
-        height: 22
+        x: 18
+        y: 202
+        width: 11
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,10 +498,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_18
       rect:
         serializedVersion: 2
-        x: 32
-        y: 198
-        width: 16
-        height: 22
+        x: 34
+        y: 202
+        width: 11
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,10 +519,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_19
       rect:
         serializedVersion: 2
-        x: 48
-        y: 198
-        width: 16
-        height: 22
+        x: 50
+        y: 202
+        width: 11
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +540,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_20
       rect:
         serializedVersion: 2
-        x: 64
-        y: 198
-        width: 16
-        height: 22
+        x: 65
+        y: 202
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -561,10 +561,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_21
       rect:
         serializedVersion: 2
-        x: 80
-        y: 198
-        width: 16
-        height: 22
+        x: 82
+        y: 202
+        width: 11
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,10 +582,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_22
       rect:
         serializedVersion: 2
-        x: 96
-        y: 198
-        width: 16
-        height: 22
+        x: 98
+        y: 202
+        width: 11
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,10 +603,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_23
       rect:
         serializedVersion: 2
-        x: 112
-        y: 198
-        width: 16
-        height: 22
+        x: 114
+        y: 202
+        width: 11
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,10 +624,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 176
-        width: 16
-        height: 22
+        x: 1
+        y: 178
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -645,10 +645,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_25
       rect:
         serializedVersion: 2
-        x: 16
-        y: 176
-        width: 16
-        height: 22
+        x: 18
+        y: 178
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -666,10 +666,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_26
       rect:
         serializedVersion: 2
-        x: 32
-        y: 176
-        width: 16
-        height: 22
+        x: 34
+        y: 178
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -687,10 +687,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_27
       rect:
         serializedVersion: 2
-        x: 48
-        y: 176
-        width: 16
-        height: 22
+        x: 49
+        y: 178
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -708,10 +708,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_28
       rect:
         serializedVersion: 2
-        x: 64
-        y: 176
-        width: 16
-        height: 22
+        x: 65
+        y: 178
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -729,10 +729,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_29
       rect:
         serializedVersion: 2
-        x: 80
-        y: 176
-        width: 16
-        height: 22
+        x: 82
+        y: 178
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -750,10 +750,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_30
       rect:
         serializedVersion: 2
-        x: 96
-        y: 176
-        width: 16
-        height: 22
+        x: 98
+        y: 178
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -771,10 +771,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_31
       rect:
         serializedVersion: 2
-        x: 112
-        y: 176
-        width: 16
-        height: 22
+        x: 113
+        y: 178
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -792,10 +792,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 154
-        width: 16
-        height: 22
+        x: 4
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,10 +813,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_33
       rect:
         serializedVersion: 2
-        x: 16
-        y: 154
-        width: 16
-        height: 22
+        x: 20
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -834,10 +834,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_34
       rect:
         serializedVersion: 2
-        x: 32
-        y: 154
-        width: 16
-        height: 22
+        x: 36
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -855,10 +855,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_35
       rect:
         serializedVersion: 2
-        x: 48
-        y: 154
-        width: 16
-        height: 22
+        x: 52
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -876,10 +876,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_36
       rect:
         serializedVersion: 2
-        x: 64
-        y: 154
-        width: 16
-        height: 22
+        x: 68
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -897,10 +897,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_37
       rect:
         serializedVersion: 2
-        x: 80
-        y: 154
-        width: 16
-        height: 22
+        x: 83
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -918,10 +918,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_38
       rect:
         serializedVersion: 2
-        x: 96
-        y: 154
-        width: 16
-        height: 22
+        x: 99
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -939,10 +939,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_39
       rect:
         serializedVersion: 2
-        x: 112
-        y: 154
-        width: 16
-        height: 22
+        x: 115
+        y: 160
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -960,10 +960,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 132
-        width: 16
-        height: 22
+        x: 1
+        y: 138
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -982,9 +982,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 132
-        width: 16
-        height: 22
+        y: 138
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1003,9 +1003,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 132
-        width: 16
-        height: 22
+        y: 138
+        width: 15
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1023,10 +1023,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_43
       rect:
         serializedVersion: 2
-        x: 48
-        y: 132
-        width: 16
-        height: 22
+        x: 49
+        y: 138
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1044,10 +1044,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_44
       rect:
         serializedVersion: 2
-        x: 64
-        y: 132
-        width: 16
-        height: 22
+        x: 65
+        y: 138
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1065,10 +1065,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_45
       rect:
         serializedVersion: 2
-        x: 80
-        y: 132
-        width: 16
-        height: 22
+        x: 81
+        y: 138
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1087,9 +1087,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 132
-        width: 16
-        height: 22
+        y: 138
+        width: 15
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1107,10 +1107,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_47
       rect:
         serializedVersion: 2
-        x: 112
-        y: 132
-        width: 16
-        height: 22
+        x: 113
+        y: 138
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1128,10 +1128,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_48
       rect:
         serializedVersion: 2
-        x: 0
-        y: 110
-        width: 16
-        height: 22
+        x: 1
+        y: 114
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1150,9 +1150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 110
-        width: 16
-        height: 22
+        y: 114
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1171,9 +1171,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 110
-        width: 16
-        height: 22
+        y: 114
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1191,10 +1191,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_51
       rect:
         serializedVersion: 2
-        x: 48
-        y: 110
-        width: 16
-        height: 22
+        x: 49
+        y: 114
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1212,10 +1212,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_52
       rect:
         serializedVersion: 2
-        x: 64
-        y: 110
-        width: 16
-        height: 22
+        x: 65
+        y: 114
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1233,10 +1233,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_53
       rect:
         serializedVersion: 2
-        x: 80
-        y: 110
-        width: 16
-        height: 22
+        x: 81
+        y: 114
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1255,9 +1255,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 110
-        width: 16
-        height: 22
+        y: 114
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1275,10 +1275,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_55
       rect:
         serializedVersion: 2
-        x: 112
-        y: 110
-        width: 16
-        height: 22
+        x: 113
+        y: 114
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1296,10 +1296,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_56
       rect:
         serializedVersion: 2
-        x: 0
-        y: 88
-        width: 16
-        height: 22
+        x: 1
+        y: 90
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1318,9 +1318,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 88
-        width: 16
-        height: 22
+        y: 90
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1339,9 +1339,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 88
-        width: 16
-        height: 22
+        y: 90
+        width: 15
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1359,10 +1359,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_59
       rect:
         serializedVersion: 2
-        x: 48
-        y: 88
-        width: 16
-        height: 22
+        x: 49
+        y: 90
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1380,10 +1380,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_60
       rect:
         serializedVersion: 2
-        x: 64
-        y: 88
-        width: 16
-        height: 22
+        x: 65
+        y: 90
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1401,10 +1401,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_61
       rect:
         serializedVersion: 2
-        x: 80
-        y: 88
-        width: 16
-        height: 22
+        x: 81
+        y: 90
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1423,9 +1423,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 88
-        width: 16
-        height: 22
+        y: 90
+        width: 15
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1443,10 +1443,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_63
       rect:
         serializedVersion: 2
-        x: 112
-        y: 88
-        width: 16
-        height: 22
+        x: 113
+        y: 90
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1464,10 +1464,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_64
       rect:
         serializedVersion: 2
-        x: 0
-        y: 66
-        width: 16
-        height: 22
+        x: 4
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1485,10 +1485,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_65
       rect:
         serializedVersion: 2
-        x: 16
-        y: 66
-        width: 16
-        height: 22
+        x: 20
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1506,10 +1506,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_66
       rect:
         serializedVersion: 2
-        x: 32
-        y: 66
-        width: 16
-        height: 22
+        x: 36
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1527,10 +1527,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_67
       rect:
         serializedVersion: 2
-        x: 48
-        y: 66
-        width: 16
-        height: 22
+        x: 52
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1548,10 +1548,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_68
       rect:
         serializedVersion: 2
-        x: 64
-        y: 66
-        width: 16
-        height: 22
+        x: 68
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1569,10 +1569,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_69
       rect:
         serializedVersion: 2
-        x: 80
-        y: 66
-        width: 16
-        height: 22
+        x: 83
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1590,10 +1590,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_70
       rect:
         serializedVersion: 2
-        x: 96
-        y: 66
-        width: 16
-        height: 22
+        x: 99
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1611,10 +1611,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_71
       rect:
         serializedVersion: 2
-        x: 112
-        y: 66
-        width: 16
-        height: 22
+        x: 115
+        y: 72
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1632,10 +1632,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_72
       rect:
         serializedVersion: 2
-        x: 0
-        y: 44
-        width: 16
-        height: 22
+        x: 1
+        y: 50
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1653,10 +1653,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_73
       rect:
         serializedVersion: 2
-        x: 16
-        y: 44
-        width: 16
-        height: 22
+        x: 17
+        y: 50
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1674,10 +1674,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_74
       rect:
         serializedVersion: 2
-        x: 32
-        y: 44
-        width: 16
-        height: 22
+        x: 34
+        y: 50
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1695,10 +1695,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_75
       rect:
         serializedVersion: 2
-        x: 48
-        y: 44
-        width: 16
-        height: 22
+        x: 50
+        y: 50
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1716,10 +1716,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_76
       rect:
         serializedVersion: 2
-        x: 64
-        y: 44
-        width: 16
-        height: 22
+        x: 65
+        y: 50
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1737,10 +1737,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_77
       rect:
         serializedVersion: 2
-        x: 80
-        y: 44
-        width: 16
-        height: 22
+        x: 81
+        y: 50
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1759,9 +1759,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 44
-        width: 16
-        height: 22
+        y: 50
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1779,10 +1779,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_79
       rect:
         serializedVersion: 2
-        x: 112
-        y: 44
-        width: 16
-        height: 22
+        x: 113
+        y: 50
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1800,10 +1800,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_80
       rect:
         serializedVersion: 2
-        x: 0
-        y: 22
-        width: 16
-        height: 22
+        x: 1
+        y: 26
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1821,10 +1821,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_81
       rect:
         serializedVersion: 2
-        x: 16
-        y: 22
-        width: 16
-        height: 22
+        x: 18
+        y: 26
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1842,10 +1842,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_82
       rect:
         serializedVersion: 2
-        x: 32
-        y: 22
-        width: 16
-        height: 22
+        x: 34
+        y: 26
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1863,10 +1863,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_83
       rect:
         serializedVersion: 2
-        x: 48
-        y: 22
-        width: 16
-        height: 22
+        x: 50
+        y: 26
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1884,10 +1884,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_84
       rect:
         serializedVersion: 2
-        x: 64
-        y: 22
-        width: 16
-        height: 22
+        x: 65
+        y: 26
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1905,10 +1905,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_85
       rect:
         serializedVersion: 2
-        x: 80
-        y: 22
-        width: 16
-        height: 22
+        x: 81
+        y: 26
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1927,9 +1927,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 22
-        width: 16
-        height: 22
+        y: 26
+        width: 13
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1947,10 +1947,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_87
       rect:
         serializedVersion: 2
-        x: 112
-        y: 22
-        width: 16
-        height: 22
+        x: 113
+        y: 26
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1968,10 +1968,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_88
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 22
+        x: 1
+        y: 2
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1989,10 +1989,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_89
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 22
+        x: 18
+        y: 2
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2010,10 +2010,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_90
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 22
+        x: 34
+        y: 2
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2031,10 +2031,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_91
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 22
+        x: 49
+        y: 2
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2052,10 +2052,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_92
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 22
+        x: 65
+        y: 2
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2073,10 +2073,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_93
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 22
+        x: 81
+        y: 2
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2095,9 +2095,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
-        width: 16
-        height: 22
+        y: 2
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2115,10 +2115,10 @@ TextureImporter:
       name: Small-8-Direction-Characters_by_AxulArt_95
       rect:
         serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 22
+        x: 113
+        y: 2
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2179,11 +2179,11 @@ TextureImporter:
       Small-8-Direction-Characters_by_AxulArt_64: -377394371
       Small-8-Direction-Characters_by_AxulArt_73: -986503029
       Small-8-Direction-Characters_by_AxulArt_0: 1604057599
-      Small-8-Direction-Characters_by_AxulArt_70: -407656664
       Small-8-Direction-Characters_by_AxulArt_17: 2051108157
+      Small-8-Direction-Characters_by_AxulArt_70: -407656664
       Small-8-Direction-Characters_by_AxulArt_34: -1942057260
-      Small-8-Direction-Characters_by_AxulArt_48: -1988313424
       Small-8-Direction-Characters_by_AxulArt_24: -825973456
+      Small-8-Direction-Characters_by_AxulArt_48: -1988313424
       Small-8-Direction-Characters_by_AxulArt_88: 1416580232
       Small-8-Direction-Characters_by_AxulArt_20: 77092136
       Small-8-Direction-Characters_by_AxulArt_27: 268853122
@@ -2225,13 +2225,13 @@ TextureImporter:
       Small-8-Direction-Characters_by_AxulArt_81: 595615297
       Small-8-Direction-Characters_by_AxulArt_22: -338358041
       Small-8-Direction-Characters_by_AxulArt_7: -1643473512
+      Small-8-Direction-Characters_by_AxulArt_4: 714425086
       Small-8-Direction-Characters_by_AxulArt_36: -340861935
-      Small-8-Direction-Characters_by_AxulArt_40: -1053583485
       Small-8-Direction-Characters_by_AxulArt_15: -914476592
       Small-8-Direction-Characters_by_AxulArt_41: -564360190
-      Small-8-Direction-Characters_by_AxulArt_46: -1992498524
-      Small-8-Direction-Characters_by_AxulArt_4: 714425086
+      Small-8-Direction-Characters_by_AxulArt_40: -1053583485
       Small-8-Direction-Characters_by_AxulArt_52: 1820908126
+      Small-8-Direction-Characters_by_AxulArt_46: -1992498524
       Small-8-Direction-Characters_by_AxulArt_9: 1417912795
       Small-8-Direction-Characters_by_AxulArt_25: 315491226
       Small-8-Direction-Characters_by_AxulArt_72: -1657001817
