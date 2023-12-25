@@ -89,52 +89,52 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5735007903031893537}
-    m_Position: {x: 40, y: 210, z: 0}
+    m_Position: {x: 260, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1266816184493193833}
-    m_Position: {x: 75, y: 275, z: 0}
+    m_Position: {x: 260, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4267597376841740457}
-    m_Position: {x: 110, y: 340, z: 0}
+    m_Position: {x: 260, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7173087149867663127}
-    m_Position: {x: 145, y: 405, z: 0}
+    m_Position: {x: 260, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6827035781703470143}
-    m_Position: {x: 180, y: 470, z: 0}
+    m_Position: {x: 260, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2014259495980316614}
-    m_Position: {x: 215, y: 535, z: 0}
+    m_Position: {x: 260, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3010921911474528231}
-    m_Position: {x: 250, y: 600, z: 0}
+    m_Position: {x: 260, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4197079701920708263}
-    m_Position: {x: 285, y: 665, z: 0}
+    m_Position: {x: 260, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1930003303920324866}
-    m_Position: {x: 320, y: 730, z: 0}
+    m_Position: {x: 460, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5190211075063611951}
-    m_Position: {x: 355, y: 795, z: 0}
+    m_Position: {x: 460, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8431732060162143092}
-    m_Position: {x: 390, y: 860, z: 0}
+    m_Position: {x: 460, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2538709850006948304}
-    m_Position: {x: 425, y: 925, z: 0}
+    m_Position: {x: 460, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4525589295126317567}
-    m_Position: {x: 460, y: 990, z: 0}
+    m_Position: {x: 460, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6160504395429782108}
-    m_Position: {x: 495, y: 1055, z: 0}
+    m_Position: {x: 460, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6652896806926383640}
-    m_Position: {x: 530, y: 1120, z: 0}
+    m_Position: {x: 460, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7383978129962767617}
-    m_Position: {x: 565, y: 1185, z: 0}
+    m_Position: {x: 460, y: 400, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -142,7 +142,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 770, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 5735007903031893537}
 --- !u!1102 &-6827035781703470143
@@ -178,7 +178,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LoonNE
+  m_Name: LookNE
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
