@@ -7,13 +7,13 @@ using UnityEngine.Tilemaps;
 public class GridSetup : MonoBehaviour
 {
     public NodeGrid Grid;
-    public Tilemap Tilemap;
+    public List<Tilemap> Tilemaps;
     public AStar Pathfinding;
 
     public void Awake()
     {
-        Tilemap = GetComponentsInChildren<Tilemap>()[0];
-        Grid = new NodeGrid(51, 51, Tilemap);
+        Tilemaps = new List<Tilemap>(GetComponentsInChildren<Tilemap>());
+        Grid = new NodeGrid(51, 51, Tilemaps);
         Pathfinding = new AStar(Grid);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -11,13 +12,15 @@ using UnityEngine.XR;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private GridSetup _world;
-    [SerializeField] private Vector2Int _position;
+    [SerializeField] private Vector3Int _position;
     [SerializeField] private Path _path;
     [SerializeField] private int _pathIndex;
     [SerializeField] private int movementSpeed = 10;
     [SerializeField] private Animator _animator;
     [SerializeField] private string _animatorDirection;
     [SerializeField] private string _animatorState;
+    [SerializeField] private int _startingLayer = 0;
+    [SerializeField] private SpriteRenderer sprite;
 
     private Task MoveNextTask;
     private Task TraversePathTask;
@@ -25,9 +28,10 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        var cell = _world.Tilemap.WorldToCell(transform.position);
-        transform.position = _world.Tilemap.GetCellCenterWorld(cell);
-        _position = (Vector2Int)cell;
+        var cell = _world.Tilemaps[_startingLayer].WorldToCell(transform.position);
+        transform.position = _world.Tilemaps[_startingLayer].GetCellCenterWorld(cell);
+        _position = new Vector3Int(cell.x, cell.y, _startingLayer);
+        sprite.sortingOrder = _startingLayer + 1;
         _animator.Play("LookS");
     }
 
@@ -43,38 +47,43 @@ public class Movement : MonoBehaviour
     private void UpdateCurrentPath()
     {
         Vector2 mousePointInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var currentPos = (Vector3Int)_position;
-        var currentNode = _world.Grid.GetNodeFromCell(currentPos.x, currentPos.y);
+        var currentPos = _position;
+        var currentNode = _world.Grid.GetNodeFromCell(currentPos.x, currentPos.y, currentPos.z);
+        Path path = null;
 
-        var cellPos = _world.Tilemap.WorldToCell(mousePointInWorld);
-        var selectedNode = _world.Grid.GetNodeFromCell(cellPos.x, cellPos.y);
-        if (selectedNode == currentNode) return;
-        if (!_world.Tilemap.HasTile(selectedNode.Position) ||
-            !_world.Tilemap.GetTile<CustomTile>(selectedNode.Position).walkable) return;
-        var path = _world.Pathfinding.FindPath(currentPos.x, currentPos.y,
-            selectedNode.Position.x, selectedNode.Position.y);
-
+        for (var layer = _world.Grid.Dimensions.z - 1; layer >= 0; layer--) //iterate backwards through each layer to find the highest z point with a valid tile
+        {
+            var cellPos = _world.Tilemaps[layer].WorldToCell(mousePointInWorld);
+            cellPos = new Vector3Int(cellPos.x - layer, cellPos.y - layer, cellPos.z);
+            var selectedNode = _world.Grid.GetNodeFromCell(cellPos.x, cellPos.y, layer);
+            if (selectedNode == currentNode) continue;
+            if (!_world.Tilemaps[layer].HasTile(cellPos) ||
+                !_world.Tilemaps[layer].GetTile<CustomTile>(cellPos).walkable) continue;
+            Debug.Log(currentPos + " " + selectedNode.Position);
+            path = _world.Pathfinding.FindPath(currentPos.x, currentPos.y, currentPos.z,
+                selectedNode.Position.x, selectedNode.Position.y, selectedNode.Position.z);
+            break;
+        }
         if (path == null) return;
-        _path = null;
+
         _path = path;
         _pathIndex = 1;
         Node prevNode = null;
         foreach (var node in _path.Nodes)
         {
             if (prevNode != null)
-                Debug.DrawLine(_world.Tilemap.GetCellCenterWorld(prevNode.Position) + new Vector3(0, 0.3f, 0),
-                    _world.Tilemap.GetCellCenterWorld(node.Position) + new Vector3(0, 0.3f, 0), Color.white,
+                Debug.DrawLine(_world.Grid.GetCenter(prevNode.Position) + new Vector3(0, 0.3f, 0),
+                    _world.Grid.GetCenter(node.Position) + new Vector3(0, 0.3f, 0), Color.white,
                     _path.Nodes.Count);
             prevNode = node;
         }
         
         if (TraversePathTask is not { Status: TaskStatus.WaitingForActivation }) TraversePathTask = TraversePath();
-        Debug.Log(TraversePathTask.Status + " " + TaskStatus.Running);
     }
 
-    private async Task TraversePath()
+    private async Task TraversePath() 
     {
-        transform.position = _world.Tilemap.GetCellCenterWorld((Vector3Int)_position);
+        transform.position = _world.Grid.GetCenter(_position);
         while (_path != null)
         {
             MoveNextTask = MoveNext();
@@ -99,8 +108,9 @@ public class Movement : MonoBehaviour
 
     public async Task MoveToCell(Node node)
     {
-        _position = (Vector2Int)node.Position;
-        var target = _world.Tilemap.GetCellCenterWorld(node.Position);
+        _position = node.Position;
+        if(_position.z+1 > sprite.sortingOrder) sprite.sortingOrder = _position.z + 1;
+        var target = _world.Grid.GetCenter(node.Position);
         var direction = target - transform.position;
         _animatorState = "Walk";
         switch (direction.x)
@@ -135,12 +145,13 @@ public class Movement : MonoBehaviour
             }
         }
         UpdateAnimator();
-        while (Vector2.Distance(transform.position, _world.Tilemap.GetCellCenterWorld(node.Position)) > 0.01f)
+        while (Vector2.Distance(transform.position, target) > 0.01f)
         {
             direction = target - transform.position;
             transform.position += movementSpeed * Time.deltaTime * direction.normalized;
             await Task.Yield();
         }
+        if (_position.z + 1 < sprite.sortingOrder) sprite.sortingOrder = _position.z + 1;
         _animatorState = "Look";
         UpdateAnimator();
     }

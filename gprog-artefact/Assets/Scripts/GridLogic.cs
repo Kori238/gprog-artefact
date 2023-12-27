@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class Node
 {
@@ -24,29 +25,52 @@ public class Node
 
 public class NodeGrid
 {
-    public readonly Vector2Int Dimensions;
-    public Tilemap Tilemap;
-    public readonly Node[,] Grid;
+    public readonly Vector3Int Dimensions;
+    public List<Tilemap> Tilemaps;
+    public readonly Node[,,] Nodes;
 
-    public NodeGrid(int width, int height, Tilemap tilemap)
+    public NodeGrid(int width, int height, List<Tilemap> tilemaps)
     {
-        Dimensions = new(width, height);
-        Tilemap = tilemap;
-        Grid = new Node[width, height];
-
-        for (var x = 0; x < width; x++)
+        var layers = tilemaps.Count;
+        Dimensions = new(width, height, layers);
+        Tilemaps = tilemaps;
+        Nodes = new Node[width, height, layers];
+        for (var z = 0; z < layers; z++)
         {
-            for (var y = 0; y < height; y++)
+            for (var x = 0; x < width; x++)
             {
-                var position = new Vector3Int(x - width / 2, y - height / 2);
-                Grid[x, y] = new Node(position);
+                for (var y = 0; y < height; y++)
+                {
+                    var position = new Vector3Int(x - width / 2, y - height / 2, z);
+                    Nodes[x, y, z] = new Node(position);
+                }
             }
         }
     }
 
-    public Node GetNodeFromCell(int x, int y)
+    public Node GetNodeFromCell(int x, int y, int z)
     {
-        return Grid[x + Dimensions.x / 2, y + Dimensions.y / 2];
+        return Nodes[x + Dimensions.x / 2, y + Dimensions.y / 2, z];
+    }
+
+    public CustomTile GetTile(Vector3Int position)
+    {
+        return Tilemaps[position.z].GetTile<CustomTile>(new Vector3Int(position.x, position.y, 0));
+    }
+
+    public bool HasTile(Vector3Int position)
+    {
+        return Tilemaps[position.z].HasTile(new Vector3Int(position.x, position.y, 0));
+    }
+
+    public Vector3 GetCenter(Vector3Int position)
+    {
+        return Tilemaps[position.z].GetCellCenterWorld(new Vector3Int(position.x, position.y, 0));
+    }
+
+    public bool CheckTileValid(Vector3Int position)
+    {
+        return HasTile(position) && !HasTile(new Vector3Int(position.x, position.y, position.z + 1));
     }
 }
 
@@ -68,6 +92,7 @@ public class AStar
 {
     private const int DIAGONAL_COST = 14;
     private const int STRAIGHT_COST = 10;
+    private const int LAYER_COST = 24;
 
     private readonly NodeGrid _grid;
     private List<Node> _searchedNodes;
@@ -83,23 +108,25 @@ public class AStar
         return _grid; 
     }
 
-    public Path FindPath(int x0, int y0, int x1, int y1)
+    public Path FindPath(int x0, int y0, int z0, int x1, int y1, int z1)
     {
         var grid = GetGrid();
-        var startNode = grid.GetNodeFromCell(x0, y0);
-        var endNode = grid.GetNodeFromCell(x1, y1);
+        var startNode = grid.GetNodeFromCell(x0, y0, z0);
+        var endNode = grid.GetNodeFromCell(x1, y1, z1);
 
         _unsearchedNodes = new List<Node> { startNode };
         _searchedNodes = new List<Node>();
-
-        for (var x = -(grid.Dimensions.x / 2); x < grid.Dimensions.x / 2 ; x++)
+        for (var z = 0; z < grid.Dimensions.z; z++)
         {
-            for (var y = -(grid.Dimensions.y / 2); y < grid.Dimensions.y / 2; y++)
+            for (var x = -(grid.Dimensions.x / 2); x < grid.Dimensions.x / 2; x++)
             {
-                var node = grid.GetNodeFromCell(x, y);
-                node.GCost = int.MaxValue;
-                node.UpdateFCost(); 
-                node.PreviousNode = null;
+                for (var y = -(grid.Dimensions.y / 2); y < grid.Dimensions.y / 2; y++)
+                {
+                    var node = grid.GetNodeFromCell(x, y, z);
+                    node.GCost = int.MaxValue;
+                    node.UpdateFCost();
+                    node.PreviousNode = null;
+                }
             }
         }
 
@@ -116,17 +143,23 @@ public class AStar
 
             _unsearchedNodes.Remove(currentNode);
             _searchedNodes.Add(currentNode);
-            var currentTile = _grid.Tilemap.GetTile<CustomTile>(currentNode.Position);
-            var hasTile = _grid.Tilemap.HasTile(currentNode.Position);
+            var currentTile = _grid.GetTile(currentNode.Position);
+            var hasTile = _grid.HasTile(currentNode.Position);
 
             if (!hasTile) continue;
 
-            List<Node> adjacents = FindAdjacents(currentNode.Position);
+            List<Node> adjacents = new();
+            FindAdjacents(currentNode.Position, ref adjacents);
+            if(currentNode.Position.z >= 1 && currentTile.layerTraversal) //if the current tile is stairs then add adjacents below this tile 
+                FindAdjacents(new Vector3Int(currentNode.Position.x, currentNode.Position.y, currentNode.Position.z-1), ref adjacents);
+            if(currentNode.Position.z < _grid.Dimensions.z) //if this is not the top layer, check for stairways to the layer above
+                FindAdjacents(new Vector3Int(currentNode.Position.x, currentNode.Position.y, currentNode.Position.z+1), ref adjacents, true);
 
             foreach (var adjacentNode in adjacents)
             {
-                var adjacentTile = _grid.Tilemap.GetTile<CustomTile>(adjacentNode.Position);
-                if (_searchedNodes.Contains(adjacentNode) || !_grid.Tilemap.HasTile(adjacentNode.Position)) continue;
+                var adjacentTile =_grid.GetTile(adjacentNode.Position);
+                if (_searchedNodes.Contains(adjacentNode) ||
+                    !_grid.CheckTileValid(adjacentNode.Position)) continue;
                 if (!adjacentTile.walkable) 
                 { 
                     _searchedNodes.Add(adjacentNode);
@@ -177,7 +210,7 @@ public class AStar
         return lowestFCostNode;
     }
 
-    private List<Node> FindAdjacents(Vector3Int position)
+    private void FindAdjacents(Vector3Int position, ref List<Node> adjacents, bool checkStairs = false)
     {
         var directions = new List<Vector2Int> {
             new Vector2Int(position.x - 1, position.y), new Vector2Int(position.x + 1, position.y), //cardinals:
@@ -187,26 +220,26 @@ public class AStar
             new Vector2Int(position.x + 1, position.y - 1), new Vector2Int(position.x + 1, position.y + 1),
         };
 
-        List<Node> adjacents = new();
-
         foreach (var direction in directions)
         {
-            if (
+            if (!(
                 direction.x > _grid.Dimensions.x/2 || direction.x < -_grid.Dimensions.x/2 || //boundaries check
-                direction.y > _grid.Dimensions.y/2 || direction.y < -_grid.Dimensions.y/2 ||
-                _grid.Tilemap.HasTile((Vector3Int)direction)
+                direction.y > _grid.Dimensions.y/2 || direction.y < -_grid.Dimensions.y/2) &&
+                _grid.CheckTileValid(new Vector3Int(direction.x, direction.y, position.z)) &&
+                (!checkStairs || _grid.GetTile(new Vector3Int(direction.x, direction.y, position.z)).layerTraversal)
                 ) 
-                adjacents.Add(_grid.GetNodeFromCell(direction.x, direction.y));
+                adjacents.Add(_grid.GetNodeFromCell(direction.x, direction.y, position.z));
         }
-        return adjacents;
     }
 
     public int CalculateDistanceCost(Node a, Node b)
     {
         var xDistance = Mathf.Abs(a.Position.x - b.Position.x);
         var yDistance = Mathf.Abs(a.Position.y - b.Position.y);
+        var zDistance = Mathf.Abs(a.Position.z - b.Position.z);
         var remaining = Mathf.Abs(xDistance - yDistance);
 
-        return DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + STRAIGHT_COST * remaining;
+        return DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + STRAIGHT_COST * remaining + LAYER_COST * zDistance;
     }
+
 }
