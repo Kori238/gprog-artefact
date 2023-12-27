@@ -125,8 +125,9 @@ public class AStar
 
             foreach (var adjacentNode in adjacents)
             {
-                if (_searchedNodes.Contains(adjacentNode) || !hasTile) continue;
-                if (!currentTile.walkable) 
+                var adjacentTile = _grid.Tilemap.GetTile<CustomTile>(adjacentNode.Position);
+                if (_searchedNodes.Contains(adjacentNode) || !_grid.Tilemap.HasTile(adjacentNode.Position)) continue;
+                if (!adjacentTile.walkable) 
                 { 
                     _searchedNodes.Add(adjacentNode);
                     continue;
@@ -203,7 +204,7 @@ public class AStar
     public int CalculateDistanceCost(Node a, Node b)
     {
         var xDistance = Mathf.Abs(a.Position.x - b.Position.x);
-        var yDistance = Mathf.Abs(a.Position.x - b.Position.y);
+        var yDistance = Mathf.Abs(a.Position.y - b.Position.y);
         var remaining = Mathf.Abs(xDistance - yDistance);
 
         return DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + STRAIGHT_COST * remaining;

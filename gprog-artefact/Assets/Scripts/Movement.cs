@@ -100,7 +100,9 @@ public class Movement : MonoBehaviour
     public async Task MoveToCell(Node node)
     {
         _position = (Vector2Int)node.Position;
-        var direction = _world.Tilemap.GetCellCenterWorld(node.Position) - transform.position;
+        var target = _world.Tilemap.GetCellCenterWorld(node.Position);
+        var direction = target - transform.position;
+        _animatorState = "Walk";
         switch (direction.x)
         {
             case > 0.01f when direction.y > 0.01f:
@@ -132,11 +134,10 @@ public class Movement : MonoBehaviour
                 break;
             }
         }
-
-        _animatorState = "Walk";
         UpdateAnimator();
         while (Vector2.Distance(transform.position, _world.Tilemap.GetCellCenterWorld(node.Position)) > 0.01f)
         {
+            direction = target - transform.position;
             transform.position += movementSpeed * Time.deltaTime * direction.normalized;
             await Task.Yield();
         }
