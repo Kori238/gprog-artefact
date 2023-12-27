@@ -113,37 +113,21 @@ public class Movement : MonoBehaviour
         var target = _world.Grid.GetCenter(node.Position);
         var direction = target - transform.position;
         _animatorState = "Walk";
-        switch (direction.x)
+        _animatorDirection = direction.x switch
         {
-            case > 0.01f when direction.y > 0.01f:
-                _animatorDirection = "NE";
-                break;
-            case > 0.01f when direction.y < -0.01f:
-                _animatorDirection = "SE";
-                break;
-            case > 0.01f:
-                _animatorDirection = "E";
-                break;
-            case < -0.01f when direction.y > 0.01f:
-                _animatorDirection = "NW";
-                break;
-            case < -0.01f when direction.y < -0.01f:
-                _animatorDirection = "SW";
-                break;
-            case < -0.01f:
-                _animatorDirection = "W";
-                break;
-            default:
+            > 0.01f when direction.y > 0.01f => "NE",
+            > 0.01f when direction.y < -0.01f => "SE",
+            > 0.01f => "E",
+            < -0.01f when direction.y > 0.01f => "NW",
+            < -0.01f when direction.y < -0.01f => "SW",
+            < -0.01f => "W",
+            _ => direction.y switch
             {
-                _animatorDirection = direction.y switch
-                {
-                    > 0.01f => "N",
-                    < -0.01f => "S",
-                    _ => _animatorDirection
-                };
-                break;
+                > 0.01f => "N",
+                < -0.01f => "S",
+                _ => _animatorDirection
             }
-        }
+        };
         UpdateAnimator();
         while (Vector2.Distance(transform.position, target) > 0.01f)
         {
