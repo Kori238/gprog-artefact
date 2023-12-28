@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 using UnityEngine.XR;
@@ -20,7 +21,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private string _animatorDirection;
     [SerializeField] private string _animatorState;
     [SerializeField] private int _startingLayer = 0;
-    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private SortingGroup visualLayer;
 
     private Task MoveNextTask;
     private Task TraversePathTask;
@@ -31,7 +32,7 @@ public class Movement : MonoBehaviour
         var cell = _world.Tilemaps[_startingLayer].WorldToCell(transform.position);
         transform.position = _world.Tilemaps[_startingLayer].GetCellCenterWorld(cell);
         _position = new Vector3Int(cell.x, cell.y, _startingLayer);
-        sprite.sortingOrder = _startingLayer + 1;
+        visualLayer.sortingOrder = _startingLayer + 1;
         _animator.Play("LookS");
     }
 
@@ -109,7 +110,7 @@ public class Movement : MonoBehaviour
     public async Task MoveToCell(Node node)
     {
         _position = node.Position;
-        if(_position.z+1 > sprite.sortingOrder) sprite.sortingOrder = _position.z + 1;
+        if(_position.z+1 > visualLayer.sortingOrder) visualLayer.sortingOrder = _position.z + 1;
         var target = _world.Grid.GetCenter(node.Position);
         var direction = target - transform.position;
         _animatorState = "Walk";
@@ -135,7 +136,7 @@ public class Movement : MonoBehaviour
             transform.position += movementSpeed * Time.deltaTime * direction.normalized;
             await Task.Yield();
         }
-        if (_position.z + 1 < sprite.sortingOrder) sprite.sortingOrder = _position.z + 1;
+        if (_position.z + 1 < visualLayer.sortingOrder) visualLayer.sortingOrder = _position.z + 1;
         _animatorState = "Look";
         UpdateAnimator();
     }

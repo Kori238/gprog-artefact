@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
+using Unity.VisualScripting;using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
@@ -11,6 +11,7 @@ public class Node
     public int FCost, GCost, HCost;
     public readonly Vector3Int Position;
     public Node PreviousNode;
+    public NodeOccupiers OccupiedBy = NodeOccupiers.None;
 
     public Node(Vector3Int position)
     {
@@ -21,6 +22,12 @@ public class Node
     {
         FCost = GCost + HCost;
     }
+}
+
+public enum NodeOccupiers
+{
+    None,
+    Podium
 }
 
 public class NodeGrid
@@ -138,6 +145,11 @@ public class AStar
 
             if (currentNode == endNode)
             {
+                if (endNode.OccupiedBy == NodeOccupiers.Podium)
+                {
+                    return CalculatePath(endNode.PreviousNode);
+                }
+
                 return CalculatePath(endNode);
             }
 
@@ -159,7 +171,8 @@ public class AStar
             {
                 var adjacentTile =_grid.GetTile(adjacentNode.Position);
                 if (_searchedNodes.Contains(adjacentNode) ||
-                    !_grid.CheckTileValid(adjacentNode.Position)) continue;
+                    !_grid.CheckTileValid(adjacentNode.Position) ||
+                    (adjacentNode.OccupiedBy != NodeOccupiers.None && adjacentNode != endNode)) continue;
                 if (!adjacentTile.walkable) 
                 { 
                     _searchedNodes.Add(adjacentNode);
