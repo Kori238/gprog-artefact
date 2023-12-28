@@ -12,6 +12,7 @@ public class Node
     public readonly Vector3Int Position;
     public Node PreviousNode;
     public NodeOccupiers OccupiedBy = NodeOccupiers.None;
+    public Podium Occupant;
 
     public Node(Vector3Int position)
     {
@@ -162,7 +163,7 @@ public class AStar
 
             List<Node> adjacents = new();
             FindAdjacents(currentNode.Position, ref adjacents);
-            if(currentNode.Position.z >= 1 && currentTile.layerTraversal) //if the current tile is stairs then add adjacents below this tile 
+            if(currentNode.Position.z >= 1 && currentTile.layerTraversal) //if the current tile is stairs and not the bottom layer then add adjacents below this tile 
                 FindAdjacents(new Vector3Int(currentNode.Position.x, currentNode.Position.y, currentNode.Position.z-1), ref adjacents);
             if(currentNode.Position.z < _grid.Dimensions.z) //if this is not the top layer, check for stairways to the layer above
                 FindAdjacents(new Vector3Int(currentNode.Position.x, currentNode.Position.y, currentNode.Position.z+1), ref adjacents, true);
@@ -240,7 +241,7 @@ public class AStar
                 direction.y > _grid.Dimensions.y/2 || direction.y < -_grid.Dimensions.y/2) &&
                 _grid.CheckTileValid(new Vector3Int(direction.x, direction.y, position.z)) &&
                 (!checkStairs || _grid.GetTile(new Vector3Int(direction.x, direction.y, position.z)).layerTraversal)
-                ) 
+                )
                 adjacents.Add(_grid.GetNodeFromCell(direction.x, direction.y, position.z));
         }
     }
@@ -254,5 +255,4 @@ public class AStar
 
         return DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + STRAIGHT_COST * remaining + LAYER_COST * zDistance;
     }
-
 }

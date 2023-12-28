@@ -22,6 +22,9 @@ public class Movement : MonoBehaviour
     [SerializeField] private string _animatorState;
     [SerializeField] private int _startingLayer = 0;
     [SerializeField] private SortingGroup visualLayer;
+    [SerializeField] public Orb _heldItem = null;
+    [SerializeField] private bool _interactWithPodiumWhenPathFinished = false;
+    [SerializeField] private Podium _podiumToInteract;
 
     private Task MoveNextTask;
     private Task TraversePathTask;
@@ -40,7 +43,6 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("mouseup");
             UpdateCurrentPath();
         }
     }
@@ -50,6 +52,7 @@ public class Movement : MonoBehaviour
         Vector2 mousePointInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var currentPos = _position;
         var currentNode = _world.Grid.GetNodeFromCell(currentPos.x, currentPos.y, currentPos.z);
+        Node destinationNode = null;
         Path path = null;
 
         for (var layer = _world.Grid.Dimensions.z - 1; layer >= 0; layer--) //iterate backwards through each layer to find the highest z point with a valid tile
@@ -63,6 +66,7 @@ public class Movement : MonoBehaviour
             Debug.Log(currentPos + " " + selectedNode.Position);
             path = _world.Pathfinding.FindPath(currentPos.x, currentPos.y, currentPos.z,
                 selectedNode.Position.x, selectedNode.Position.y, selectedNode.Position.z);
+            destinationNode = selectedNode;
             break;
         }
         if (path == null) return;
@@ -70,6 +74,8 @@ public class Movement : MonoBehaviour
         _path = path;
         _pathIndex = 1;
         Node prevNode = null;
+        _interactWithPodiumWhenPathFinished = (destinationNode.OccupiedBy == NodeOccupiers.Podium); 
+        _podiumToInteract = destinationNode.Occupant;
         foreach (var node in _path.Nodes)
         {
             if (prevNode != null)
@@ -78,7 +84,7 @@ public class Movement : MonoBehaviour
                     _path.Nodes.Count);
             prevNode = node;
         }
-        
+
         if (TraversePathTask is not { Status: TaskStatus.WaitingForActivation }) TraversePathTask = TraversePath();
     }
 
@@ -95,13 +101,16 @@ public class Movement : MonoBehaviour
     private async Task MoveNext()
     {
         await Task.Delay(100);
-        if (_path == null) return;
-        var node = _path.Nodes[_pathIndex];
-        await MoveToCell(node);
-        if (_pathIndex == _path.Nodes.Count - 1)
+        if (!(_pathIndex >= _path.Nodes.Count))
+        {
+            var node = _path.Nodes[_pathIndex];
+            await MoveToCell(node);
+        }
+        if (_pathIndex >= _path.Nodes.Count - 1)
         {
             _path = null;
             _pathIndex = 1;
+            if (_interactWithPodiumWhenPathFinished) _podiumToInteract.Interact(this);
             return;
         }
         _pathIndex++;
@@ -130,7 +139,7 @@ public class Movement : MonoBehaviour
             }
         };
         UpdateAnimator();
-        while (Vector2.Distance(transform.position, target) > 0.01f)
+        while (Vector2.Distance(transform.position, target) > 0.01f) 
         {
             direction = target - transform.position;
             transform.position += movementSpeed * Time.deltaTime * direction.normalized;
