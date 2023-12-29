@@ -1,14 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
-using UnityEngine.XR;
 
 public class Movement : MonoBehaviour
 {
@@ -121,7 +113,7 @@ public class Movement : MonoBehaviour
         _position = node.Position;
         if(_position.z+1 > visualLayer.sortingOrder) visualLayer.sortingOrder = _position.z + 1;
         var target = _world.Grid.GetCenter(node.Position);
-        var direction = target - transform.position;
+        Vector2 direction = target - transform.position;
         _animatorState = "Walk";
         _animatorDirection = direction.x switch
         {
@@ -139,10 +131,10 @@ public class Movement : MonoBehaviour
             }
         };
         UpdateAnimator();
-        while (Vector2.Distance(transform.position, target) > 0.01f) 
+        while (Vector2.Distance(transform.position, target) > 0.05f) 
         {
             direction = target - transform.position;
-            transform.position += movementSpeed * Time.deltaTime * direction.normalized;
+            transform.position += (Vector3)(movementSpeed * Time.deltaTime * direction.normalized);
             await Task.Yield();
         }
         if (_position.z + 1 < visualLayer.sortingOrder) visualLayer.sortingOrder = _position.z + 1;
