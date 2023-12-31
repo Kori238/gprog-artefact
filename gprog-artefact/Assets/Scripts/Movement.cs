@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -17,7 +20,10 @@ public class Movement : MonoBehaviour
     [SerializeField] public Orb _heldItem = null;
     [SerializeField] private bool _interactWithPodiumWhenPathFinished = false;
     [SerializeField] private Podium _podiumToInteract;
+    [SerializeField] private List<Podium> _podiumList;
+    [SerializeField] private GameObject _victoryScreen;
 
+    public bool _settingsMenuOpen = false;
     private Task MoveNextTask;
     private Task TraversePathTask;
 
@@ -29,11 +35,12 @@ public class Movement : MonoBehaviour
         _position = new Vector3Int(cell.x, cell.y, _startingLayer);
         visualLayer.sortingOrder = _startingLayer + 1;
         _animator.Play("LookS");
+        _podiumList = new List<Podium>(FindObjectsOfType<Podium>());
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !_settingsMenuOpen)
         {
             UpdateCurrentPath();
         }
@@ -60,6 +67,16 @@ public class Movement : MonoBehaviour
                 selectedNode.Position.x, selectedNode.Position.y, selectedNode.Position.z);
             destinationNode = selectedNode;
             break;
+        }
+        foreach (var podium in _podiumList)
+        {
+            if (podium.GetComponent<Collider2D>().bounds.Contains(new Vector3(mousePointInWorld.x, mousePointInWorld.y)))
+            {
+                var selectedNode = podium.occupiedNode;
+                path = _world.Pathfinding.FindPath(currentPos.x, currentPos.y, currentPos.z,
+                    selectedNode.Position.x, selectedNode.Position.y, selectedNode.Position.z);
+                destinationNode = selectedNode;
+            }
         }
         if (path == null) return;
 
@@ -138,6 +155,12 @@ public class Movement : MonoBehaviour
             await Task.Yield();
         }
         if (_position.z + 1 < visualLayer.sortingOrder) visualLayer.sortingOrder = _position.z + 1;
+        if (_world.Grid.GetTile(node.Position).goal)
+        {
+            Debug.Log("Puzzle Complete!!");
+            _victoryScreen.transform.GetChild(0).gameObject.SetActive(true);
+            _path = null;
+        }
         _animatorState = "Look";
         UpdateAnimator();
     }

@@ -14,15 +14,17 @@ public class Podium : MonoBehaviour
     [SerializeField] private Orb _heldItem = null;
     [SerializeField] private SortingGroup sortingGroup;
     [SerializeField] private List<PowerLine> powerLines;
+    public Node occupiedNode;
+
     void Start()
     {
         var cell = _world.Tilemaps[_startingLayer].WorldToCell(transform.position - new Vector3(0, _startingLayer * 0.5f, 0));
-        transform.position = _world.Tilemaps[_startingLayer].GetCellCenterWorld(cell);
+        transform.position = (Vector2)_world.Tilemaps[_startingLayer].GetCellCenterWorld(cell);
         _position = new Vector3Int(cell.x, cell.y, _startingLayer);
         sortingGroup.sortingOrder = _startingLayer + 1;
-        var node = _world.Grid.GetNodeFromCell(cell.x, cell.y, _startingLayer);
-        node.OccupiedBy = NodeOccupiers.Podium;
-        node.Occupant = this;
+        occupiedNode = _world.Grid.GetNodeFromCell(cell.x, cell.y, _startingLayer);
+        occupiedNode.OccupiedBy = NodeOccupiers.Podium;
+        occupiedNode.Occupant = this;
         
     }
 
@@ -30,6 +32,7 @@ public class Podium : MonoBehaviour
     {
         foreach (var powerLine in powerLines.Where(powerLine => powerLine.wireColor == colour))
         {
+            Debug.Log(powerLine);
             if (enable) powerLine.Enable(); 
             else powerLine.Disable();
         }

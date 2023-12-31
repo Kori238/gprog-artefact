@@ -8,7 +8,7 @@ public class PowerLine : MonoBehaviour
     [SerializeField] private List<Wire> wires;
     [SerializeField] public WireColours wireColor;
 
-    void Start()
+    void Awake()
     {
         wires = new List<Wire>(transform.GetChild(0).GetComponentsInChildren<Wire>());
     }

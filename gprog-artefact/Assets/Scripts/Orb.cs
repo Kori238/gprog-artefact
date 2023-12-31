@@ -9,6 +9,10 @@ public class Orb : MonoBehaviour
     [SerializeField] public PowerLine.WireColours colour;
     void Start()
     {
-        if (podium != null) podium.SetItem(this);
+        if (podium != null)
+        {
+            podium.SetItem(this);
+            podium.UpdatePowerLines(colour, true);
+        }
     }
 }

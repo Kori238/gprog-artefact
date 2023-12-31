@@ -36,3 +36,4 @@ MonoBehaviour:
   m_ColliderType: 1
   layerTraversal: 0
   walkable: 1
+  goal: 1
