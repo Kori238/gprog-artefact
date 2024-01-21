@@ -11,6 +11,7 @@ public class PoweredTile : Wire
     // Start is called before the first frame update
     void Start()
     {
+        _world = GameObject.Find("Grid").GetComponent<GridSetup>();
         var cell = _world.Tilemaps[_startingLayer].WorldToCell(transform.position - new Vector3(0, _startingLayer * 0.5f, 0));
         transform.position = _world.Tilemaps[_startingLayer].GetCellCenterWorld(cell) - new Vector3(0, 0.01f, 0);
         _position = new Vector3Int(cell.x, cell.y, _startingLayer);

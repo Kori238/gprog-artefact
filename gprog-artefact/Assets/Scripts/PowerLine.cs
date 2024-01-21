@@ -16,9 +16,9 @@ public class PowerLine : MonoBehaviour
     public enum WireColours
     {
         Red,
-        Green,
+        Purple,
         Blue,
-        Yellow
+        Orange
     }
     public async void Enable()
     {
