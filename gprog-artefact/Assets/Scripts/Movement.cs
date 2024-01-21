@@ -113,7 +113,11 @@ public class Movement : MonoBehaviour
         if (!(_pathIndex >= _path.Nodes.Count))
         {
             var node = _path.Nodes[_pathIndex];
-            await MoveToCell(node);
+            if (!_world.Grid.HasTile(node.Position))
+            {
+                _pathIndex = 999;
+            }
+            else await MoveToCell(node);
         }
         if (_pathIndex >= _path.Nodes.Count - 1)
         {

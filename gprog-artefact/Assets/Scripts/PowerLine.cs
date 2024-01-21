@@ -18,7 +18,8 @@ public class PowerLine : MonoBehaviour
         Red,
         Purple,
         Blue,
-        Orange
+        Orange,
+        Empty
     }
     public async void Enable()
     {
