@@ -9,11 +9,11 @@ public class Wire : MonoBehaviour
 {
     [SerializeField] public int _startingLayer;
     [SerializeField] public GridSetup _world;
-    [SerializeField] public Vector3Int _position;
-    [SerializeField] public SortingGroup sortingGroup;
-    [SerializeField] public SpriteRenderer _spriteRenderer;
-    [SerializeField] public Color poweredColour;
-    [SerializeField] public Color unpoweredColour;
+    public Vector3Int _position;
+    public SortingGroup sortingGroup;
+    public SpriteRenderer _spriteRenderer;
+    public Color poweredColour;
+    public Color unpoweredColour;
     void Start()
     {
         _world = GameObject.Find("Grid").GetComponent<GridSetup>();

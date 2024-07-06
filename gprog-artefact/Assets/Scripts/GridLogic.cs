@@ -137,7 +137,6 @@ public class AStar
                 }
             }
         }
-
         var i = 0;
         while (_unsearchedNodes.Count > 0 && i < 1000)
         {
@@ -153,7 +152,6 @@ public class AStar
 
                 return CalculatePath(endNode);
             }
-
             _unsearchedNodes.Remove(currentNode);
             _searchedNodes.Add(currentNode);
             var currentTile = _grid.GetTile(currentNode.Position);
